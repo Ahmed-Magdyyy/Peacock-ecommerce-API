@@ -72,7 +72,7 @@ orderSchema.pre('save', function (next) {
   next();
 });
 
-orderSchema.pre('findOneAndUpdate', function () {
+orderSchema.pre('updateOne', function () {
   this.updateOne({}, { $set: { updatedAt: moment().tz('Africa/Cairo').format('YYYY-MM-DDTHH:mm:ss[Z]') } });
 });
 
